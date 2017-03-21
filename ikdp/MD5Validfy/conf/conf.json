@@ -1,0 +1,61 @@
+{
+  "url":"jdbc:mysql://localhost:3306/article_info?useSSL=false",
+  
+  "username":"root",
+  
+  "passwd":"admin",
+  
+  "table_names":["article_basic","journal","author"],
+  
+  "table_column":{
+  
+    "article_basic":["article_id","doi","title","pub_date_epub","pub_date_ppub","journal_id"],
+    
+    "journal":["issn_ppub","title"],
+    
+    "author":["contact","name"]
+    
+    
+  },
+  
+  "table_IDTable":{
+  
+    "author":"article_author",
+    
+    "journal":"article_basic"
+    
+  },
+  
+  "IDTable_Columns":{
+  
+    "article_author":{
+    
+      "SrcColName":"article_id",
+      
+      "DstColName":"author_id"
+      
+    },
+    
+    "article_basic":{
+    
+      "SrcColName":"article_id",
+      
+      "DstColName":"journal_id"
+      
+    }
+    
+  },
+  
+  "mainTables":["article_basic"],
+  
+  "table_IDColName":{
+  
+    "article_basic":"article_id",
+    
+    "journal":"id",
+    
+    "author":"id"
+    
+  }
+  
+}
